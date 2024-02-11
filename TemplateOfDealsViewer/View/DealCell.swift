@@ -27,8 +27,12 @@ class DealCell: UITableViewCell {
         dateLabel.text = dateFormatter.string(from: deal.dateModifier)
         
         switch deal.side {
-        case .buy: priceLabel.textColor = .systemGreen
-        case .sell: priceLabel.textColor = .systemRed
+        case .buy: 
+            priceLabel.textColor = .systemGreen
+            sideLabel.textColor = .systemGreen
+        case .sell:
+            priceLabel.textColor = .systemRed
+            sideLabel.textColor = .systemRed
         }
         sideLabel.text = deal.side.description
     }
