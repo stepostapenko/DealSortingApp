@@ -72,3 +72,18 @@ struct Deal {
     case sell, buy
   }
 }
+
+extension Deal.Side: CustomStringConvertible, Comparable {
+    static func < (lhs: Deal.Side, rhs: Deal.Side) -> Bool {
+        return lhs.description < rhs.description
+    }
+    
+    var description: String {
+        switch self {
+        case .sell:
+            return "Sell"
+        case .buy:
+            return "Buy"
+        }
+    }
+}
